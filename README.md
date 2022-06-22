@@ -1,5 +1,5 @@
 # BrickBench
-A map editor for TT Games LEGO games.
+A map editor for TT Games LEGO games... and Bionicle Heroes :)
 
 ![BBPic](https://user-images.githubusercontent.com/6656968/150651051-7461ce38-b028-4fd7-a0df-322d2e04ec8d.png)
 
