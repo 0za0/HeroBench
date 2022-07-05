@@ -41,8 +41,9 @@ public record Project(boolean isProject,
         LSW_TCS(NU2, "lsw-tcs", "Lego Star Wars: The Complete Saga"),
 
         LHP1_4(NXG, "lhp1-4", "Lego Harry Potter: Years 1-4"),
-        LSW3(NXG, "lsw3", "Lego Star Wars 3: The Clone Wars");
-
+        LSW3(NXG, "lsw3", "Lego Star Wars 3: The Clone Wars"),
+        //Bionicle Heroes
+        BH(NU,"bh","Bionicle Heroes");
         /**
          * The engine this game uses.
          */
@@ -62,9 +63,12 @@ public record Project(boolean isProject,
      * An identifier for the engine version.
      */
     public enum EngineVersion {
+        //Added a couple more types for Bionicle Heroes
         NU2("gsc", "txt", "ter", "ai2", "giz", "par", "ptl", "rtl", "bur", "gra", "git", "sfx", "anm", "scp"),
-        NXG("nxg", "giz");
 
+        //Because Bionicle Heroes runs on a modified version of the NU2 engine, I think its alright to create a new Engineversion for it - Nullpo
+        NU("nup", "ghg","hgp","scp","an3","rtl","ptl","cfg","gra","job","cu2","ai2","an3"), //maybe add .pak
+        NXG("nxg", "giz");
         /**
          * Represents the list of filetypes this engine version uses. This is used for the heuristic
          * that determines engine version when loading a map.
@@ -76,6 +80,7 @@ public record Project(boolean isProject,
 
         public GameVersion getDefaultGame() {
             return switch (this) {
+                case NU -> GameVersion.BH;
                 case NU2 -> GameVersion.LSW_TCS;
                 case NXG -> GameVersion.LHP1_4;
             };

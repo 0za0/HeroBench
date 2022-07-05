@@ -55,6 +55,15 @@ public class MapLoader {
                         new NU2MapData.TxtData(),
                         new NU2MapData.GitData(),
                         new NU2MapData.RTLData());
+                case NU -> new NU2MapData(mapXml.name(),
+                        mapXml,
+                        new NU2MapData.SceneData(),
+                        null,
+                        null,
+                        new NU2MapData.AIData(),
+                        new NU2MapData.TxtData(),
+                        null,
+                        new NU2MapData.RTLData());
                 default -> null;
             };
 
